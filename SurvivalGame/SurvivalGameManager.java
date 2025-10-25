@@ -1,6 +1,7 @@
 package AdventureGame.SurvivalGame;
 
+import AdventureGame.GameMechanics.GameStart;
 
-public abstract class SurvivalGameManager implements Survival{
-    
+public class SurvivalGameManager extends GameStart implements Survival{
+
 }

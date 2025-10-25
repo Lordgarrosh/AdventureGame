@@ -1,12 +1,13 @@
 package AdventureGame.SurvivalGame;
 
-public class Hero {
+public abstract class Hero implements CharacterActions {
     private String name;
     private String[] abilities;
     private String country;
     private String characterDescription;
     private double characterHealth;
     private int characterEnergy;
+    
     Hero(String name, String[] abilities, String country, String characterDescription, double characterHealth, int characterEnergy) {
         this.name = name;
         this.abilities = abilities;
