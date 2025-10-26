@@ -1,29 +1,38 @@
 package AdventureGame.SurvivalGame;
-
+import java.util.Scanner;
 public class PlayerHero extends Hero{
-
-    PlayerHero(String name, String[] abilities, String country, String characterDescription, int characterHealth,
-            int characterEnergy) {
-        super(name, abilities, country, characterDescription, characterHealth, characterEnergy);
-        
+    private Scanner scan;
+    PlayerHero(String name, Abilities[] abilities, int attackDamage, String country, String characterDescription, int characterHealth, Scanner scan) {
+        super(name, abilities, attackDamage, country, characterDescription, characterHealth);
+        this.scan = scan;
     }
 
+    
+    
     @Override
-    public void skillsAttack(Hero character) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'skillsAttack'");
+    public void dialogue(Hero character, String[] dialogue) {
+                
     }
 
-    @Override
-    public void basicAttack(Hero character) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'basicAttack'");
-    }
+
 
     @Override
-    public void dialogue(Hero character, String[] dialogue, String enemy) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dialogue'");
+    public void heroAssault(PlayerHero character, Enemy enemy) {
+        System.out.println("Enter your attack input: ");
+        System.out.println("1 - for basic attack");
+        System.out.println("2 - for " + character.getAbilities()[0]);
+        System.out.println("3 - for " + character.getAbilities()[1]);
+        System.out.println("4 - for " + character.getAbilities()[2]);
+        System.out.println("5 - for " + character.getAbilities()[3]);
+        int chooseAttack = scan.nextInt();
+        if (chooseAttack == 1) {
+                System.out.println("Enemy " + enemy.getName() + " is attacked");
+                enemy.takeDamage(getAttackDamage(), "basicattack", 1);
+        }
+        else {
+             Abilities chosen = character.getAbilities()[chooseAttack];
+                    chosen.activate(character, enemy);
+        }
     }
     
 }

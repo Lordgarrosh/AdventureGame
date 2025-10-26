@@ -6,10 +6,10 @@ public abstract class Abilities implements AbilityEffect {
     private String description;
     private boolean isUltimate;
 
-    Abilities(String ability, int energyCost, String description, boolean isUltimate) {
+    Abilities(String ability, String description,  boolean isUltimate) {
         this.ability = ability;
-        this.energyCost = energyCost;
         this.description = description;
+        
         this.isUltimate = isUltimate;
     }
 
@@ -26,11 +26,6 @@ public abstract class Abilities implements AbilityEffect {
     public boolean getIsUltimate() {
         return isUltimate;
     }
-
-    public double checkCD() {
-
-    }
-
 
     @Override
     public String toString() {

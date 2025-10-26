@@ -8,5 +8,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         SurvivalGameManager test = new SurvivalGameManager();
         test.startBattle(scan, null, null);
+        
     }
 }
