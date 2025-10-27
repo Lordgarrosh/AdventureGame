@@ -20,6 +20,10 @@ public abstract class Hero implements CharacterActions {
 
     }
 
+   public Hero() {
+
+    }
+
     //getters   
     public String getName() {
         return name;
@@ -83,12 +87,17 @@ public abstract class Hero implements CharacterActions {
     }
     
 
-    public void increasedStat(double statAmount, double duration) throws InterruptedException {
+    public void increasedStat(double statAmount, double duration)  {
          attackDamage+=statAmount;
         while (duration >= 0) {
             duration--;
             // System.out.println("Current Damage are: " + attackDamage);
-            Thread.sleep(1000);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
        if (duration == 0 ) {
         attackDamage -= statAmount;

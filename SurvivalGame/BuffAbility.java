@@ -1,12 +1,11 @@
 package AdventureGame.SurvivalGame;
 
 public class BuffAbility extends Abilities{
-    private String buffType;
     private double buffAmount;
     private double buffDuration;
-    BuffAbility(String ability, int energyCost, String description, boolean isUltimate, String buffType, double buffAmount, double buffDuration) {
-        super(ability, energyCost, description, isUltimate);
-        this.buffType = buffType;
+    BuffAbility(String ability, String description, boolean isUltimate, double cooldown,  double buffAmount, double buffDuration) {
+        super(ability,  description, isUltimate, cooldown);
+   
         this.buffAmount = buffAmount;
         this.buffDuration = buffDuration;
     }
@@ -14,13 +13,10 @@ public class BuffAbility extends Abilities{
     @Override
     public void activate(PlayerHero playerHero, Enemy enemy) {
         System.out.println("Player Uses " + getAbility() );
-        playerHero.increasedStat(buffAmount, buffType, buffDuration);
-    }
+        playerHero.increasedStat(buffAmount,  buffDuration);
+    }   
         
 //getters
-public String getBuffType() {
-    return buffType;
-}
 public double getBuffAmount() {
     return buffAmount;
 }

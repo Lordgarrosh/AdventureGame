@@ -6,7 +6,9 @@ public class PlayerHero extends Hero{
         super(name, abilities, attackDamage, country, characterDescription, characterHealth);
         this.scan = scan;
     }
-
+    PlayerHero() {
+        
+    }
     
     
     @Override

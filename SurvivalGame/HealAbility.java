@@ -3,9 +3,9 @@ package AdventureGame.SurvivalGame;
 public class HealAbility extends Abilities{
     private int heal;
     
-    HealAbility(String ability, String description, boolean isUltimate) {
-        super(ability,  description, isUltimate);
-        //TODO Auto-generated constructor stub
+    HealAbility(String ability, String description, boolean isUltimate, double cooldown, int heal) {
+        super(ability,  description, isUltimate, cooldown);
+        this.heal = heal;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package AdventureGame.StoryGame;
 
 public interface Story {
-    void narrate();
     void interact();
     int computeScores();
     int computeTotalGrade();

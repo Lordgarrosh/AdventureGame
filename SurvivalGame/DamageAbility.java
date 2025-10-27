@@ -3,11 +3,12 @@ package AdventureGame.SurvivalGame;
 public class DamageAbility extends Abilities{
     private int damage;
     private String damageType;
-    private int delay;
-    private int duration;
-    DamageAbility(String ability, int energyCost, String description, boolean isUltimate) {
-        super(ability, energyCost, description, isUltimate);
 
+    private int duration;
+    DamageAbility(String ability,  String description, boolean isUltimate, double cooldown, int damage, int duration) {
+        super(ability,  description, isUltimate, cooldown);
+        this.damage = damage;
+        this.duration = duration;
     }
 
     @Override
