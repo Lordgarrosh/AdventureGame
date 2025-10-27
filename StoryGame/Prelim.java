@@ -21,25 +21,9 @@ public class Prelim extends StoryEvents{
     }
 
     @Override
-    public double recitation(Questions[] questions, Scanner scan) {
-        int totalRecitationScores = 0;
-        for (Questions recitationQuestions : questions) {
-            System.out.println(recitationQuestions.getQuestionName());
-            String reciteAnswer = scan.nextLine();
-            reciteAnswer = reciteAnswer.substring(0, 1).toUpperCase() + reciteAnswer.substring(1);
-            if (recitationQuestions.getCorrectAnswer().equals(null)) {
-                System.out.println(recitationQuestions.getCorrectAnswer());
-            }
-            else {
-                if (recitationQuestions.getCorrectAnswer().equals(reciteAnswer)) {
-                    System.out.println(recitationQuestions.getCorrectResponse());
-                    totalRecitationScores+=recitationQuestions.getPointsGiven();
-                }
-                else {
-                    System.out.println(recitationQuestions.getIncorrectResponse());
-                }
-            }
-        }
+    public double recitation(RecitationQuestions[] recitation, Scanner scan) {
+       System.out.println("Now that we are done with the discussion now let us have some recitation for today");
+        recitation.calculateScore();
         return totalRecitationScores;
     }
 
