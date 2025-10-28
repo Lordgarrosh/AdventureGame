@@ -15,7 +15,7 @@ public abstract class StoryEvents implements SchoolEvents {
     public void narrate(String[] narrateSentences) {
         try {
         for (String narrate: narrateSentences) {
-           Thread.sleep(2000);
+           Thread.sleep(500);
            System.out.println(narrate);
             }
         }catch (InterruptedException e) {

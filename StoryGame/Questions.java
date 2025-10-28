@@ -10,6 +10,8 @@ public abstract class Questions {
         this.correctAnswer = correctAnswer;
         this.pointsGiven = pointsGiven;
     }
+    Questions() {
+    }
 
     //getters
     public String getQuestionName() {

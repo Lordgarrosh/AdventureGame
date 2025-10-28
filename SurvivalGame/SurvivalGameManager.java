@@ -118,4 +118,12 @@ System.out.println(listWorldLeader.getName() + " from the country of " + listWor
             }
             System.out.println("Let battle be joined");
     }
+
+
+
+    @Override
+    public int startGame(Scanner scan) {
+        System.out.println("Starting game for this mfker");
+        return 2;
+    }
 }

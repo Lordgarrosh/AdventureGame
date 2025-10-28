@@ -29,10 +29,10 @@ public class StoryGameManager extends GameEngine  {
                                      "That is to graduate in his chosen program",
                                      "But with only a few more grind the fire in his spirit rises to accomplish his long dream."};
         for (String narrate : narrateSentences) {
-                Thread.sleep(2000);
+                Thread.sleep(500);
                 System.out.println(narrate);   
         }
-          Thread.sleep(30000);
+          Thread.sleep(500);
         } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -52,10 +52,11 @@ public class StoryGameManager extends GameEngine  {
         System.out.println("3 - Senior");
          System.out.print("Enter the difficulty that you want: ");
         int chooseDifficulty = scan.nextInt();
+        scan.nextLine();
         DifficultyMode difficultyChosen = DifficultyMode.values()[chooseDifficulty - 1];
         System.out.println("You have chosen " + difficultyChosen);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -67,7 +68,8 @@ public class StoryGameManager extends GameEngine  {
         return 1;
     }
 
-    public void startGame(Scanner scan) {
+    @Override
+    public int startGame(Scanner scan) {
         setDifficulty(chooseLevel(scan));
         narrate();
         Student student = new Student();
@@ -85,11 +87,20 @@ public class StoryGameManager extends GameEngine  {
                                     "You felt anxiety and worriness because some are different from what you self study",
                                     "After discussing the principles the teacher is asking some questions about some programs"}
         );
-         prelim.recitation(new Questions[]{
-            new Questions("Why did you choose this course", null, 10, "Thanks for sharing your response", null ),
-            new Questions("What is a programming langauge use for? A - to communicate instructions to a computer\n B - Googling stuff in the internet\n C - Typing random things in your computer ", "A", 10, "That's it you got the correct answer you will receive 10 points for your recitation", "No, sorry but the right answer is letter A"),
-            new Questions("Ok last question What is the importance of programming in developing our future?\n A - It limits technological advancement and creativity.\n B - It enables the creation of new technologies and solutions that improve our daily lives.\n C - It only helps people play computer games.\n D - It prevents automation and efficiency in industries.", "B", 10, "Yes, You got it programming have a massive impact in innovating our future from the AI, the website the mobile and other most innovation are created with the help of programming", "I'm sorry the correct answer is letter B")
+         prelim.recitation(new RecitationQuestions[]{
+            new RecitationQuestions("Why did you choose this course", null, 10, "Thanks for sharing your response", null ),
+            new RecitationQuestions("What is a programming langauge use for? A - to communicate instructions to a computer\n B - Googling stuff in the internet\n C - Typing random things in your computer ", "A", 10, "That's it you got the correct answer you will receive 10 points for your recitation", "No, sorry but the right answer is letter A"),
+            new RecitationQuestions("Ok last question What is the importance of programming in developing our future?\n A - It limits technological advancement and creativity.\n B - It enables the creation of new technologies and solutions that improve our daily lives.\n C - It only helps people play computer games.\n D - It prevents automation and efficiency in industries.", "B", 10, "Yes, You got it programming have a massive impact in innovating our future from the AI, the website the mobile and other most innovation are created with the help of programming", "I'm sorry the correct answer is letter B")
         }, scan);
+        prelim.quizzes(new WrittenQuestions[]{
+                new WrittenQuestions("1. Which of the following is the correct way to declare a variable in Java? A) int num = 10; B) int = 10 num; C) num int = 10; D) declare int num = 10;", "A", 3),
+    new WrittenQuestions("2. Which keyword is used to create a subclass in Java? A) implements B) extends C) inherits D) superclass;", "B", 3),
+    new WrittenQuestions("3. What does JVM stand for? A) Java Variable Machine B) Java Virtual Mechanism C) Java Virtual Machine D) Java Version Manager;", "C", 3),
+    new WrittenQuestions("4. Which of the following is NOT a Java access modifier? A) public B) private C) protected D) secured;", "D", 3),
+    new WrittenQuestions("5. What will be the output of the statement: System.out.println(5 + 2 + \"7\"); A) 12 B) 57 C) 77 D) 527;", "C", 3)
+        } , scan);  
+        prelim.examination(null, scan);
+        return 2;
     }
     
 }
