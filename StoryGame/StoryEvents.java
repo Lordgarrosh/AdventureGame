@@ -27,22 +27,31 @@ public abstract class StoryEvents implements SchoolEvents {
     public void interactiveDialogue(String[] teacherChat, Scanner scan) {
 
     }
-    
 
-    public double quizDuration() {
+    public int examDuration() {
         switch (difficulty) {
             case EASY : return 0;
             case NORMAL : return 60;
-            case HARD : return 30;
+            case HARD : return 40;
+            default : return 0;
+        }
+    }
+    
+
+    public int quizDuration() {
+        switch (difficulty) {
+            case EASY : return 0;
+            case NORMAL : return 40;
+            case HARD : return 25;
             default : return 0;
         }
     }
 
-    public double recitationDuration() {
+    public int recitationDuration() {
         switch (difficulty) {
             case EASY : return 0;
-            case NORMAL : return 30;
-            case HARD : return 15;
+            case NORMAL : return 20;
+            case HARD : return 7;
             default : return 0;
         }
     }

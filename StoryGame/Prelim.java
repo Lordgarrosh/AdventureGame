@@ -15,7 +15,7 @@ public class Prelim extends StoryEvents{
     public double recitation(RecitationQuestions[] recitation, Scanner scan) {
        System.out.println("Now that we are done with the discussion now let us have some recitation for today");
        RecitationQuestions recitationHandler = new RecitationQuestions();
-       double totalRecitationScores = recitationHandler.processQuestion(recitation, scan);
+       double totalRecitationScores = recitationHandler.processQuestion(recitation, scan, quizDuration());
         System.out.println("Congratulations you got a total of: " + totalRecitationScores + " from the recitations, keep up the good work");
         return totalRecitationScores;
     
@@ -31,7 +31,7 @@ public class Prelim extends StoryEvents{
       });
       System.out.println("Good morning class we will now start our quiz so prepare your paper and pen");
       WrittenQuestions quizHandler = new WrittenQuestions();
-      double totalQuizScores = quizHandler.processQuestion(questions, scan);
+      double totalQuizScores = quizHandler.processQuestion(questions, scan, quizDuration());
       System.out.println("Congratulations you got a total of: " + totalQuizScores + " from the quiz, keep up the good work");
       return totalQuizScores;
     }
@@ -47,7 +47,7 @@ public class Prelim extends StoryEvents{
             "Now with the time is set the examination will now begin"
         });
         WrittenQuestions examHandler = new WrittenQuestions();
-        double totalExamScores = examHandler.processQuestion(examQuestions, scan);
+        double totalExamScores = examHandler.processQuestion(examQuestions, scan, quizDuration());
         narrate(new String[] {
             "Now the examination is finally over",
             "Some students find the exam hard",
@@ -55,7 +55,7 @@ public class Prelim extends StoryEvents{
             "Akhito though faced with some hard questions yet confident of himself that he might pass",
             "Now that they are done only the announcement of their professor to check if they passed or not",
         });
-        System.out.println("Congratulations you got a total of " + totalExamScores + " in your examination, keep up the good work");
+            
         return totalExamScores;
     }
 

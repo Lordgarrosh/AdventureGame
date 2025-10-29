@@ -4,7 +4,7 @@ public abstract class Questions {
     private String questionName;
     private String correctAnswer;
     private int pointsGiven;
-
+    private double totalScore;
     Questions(String questionName, String correctAnswer, int pointsGiven) {
         this.questionName = questionName;
         this.correctAnswer = correctAnswer;
@@ -22,5 +22,11 @@ public abstract class Questions {
     }
     public int getPointsGiven() {
         return pointsGiven;
+    }
+    public double getTotalScore() {
+        return totalScore;
+    }
+    public void setTotalScore(double totalScore) {
+         this.totalScore = totalScore;
     }
 }

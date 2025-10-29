@@ -10,21 +10,30 @@ public class WrittenQuestions extends Questions implements CalculateActScore<Wri
     }
 
     @Override
-    public double processQuestion(WrittenQuestions[] question, Scanner scan) {
+    public double processQuestion(WrittenQuestions[] question, Scanner scan, int timeLimit) {
          int totalRecitationScores = 0;
+         timeLimit *= 1000;
              for (WrittenQuestions recitationQuestions : question) {
-            System.out.print(recitationQuestions.getQuestionName() + ": ");
-            String reciteAnswer = scan.nextLine();
-            reciteAnswer = reciteAnswer.substring(0, 1).toUpperCase() + reciteAnswer.substring(1);
-            if (recitationQuestions.getCorrectAnswer().equals(null)) {
-                System.out.println(recitationQuestions.getCorrectAnswer());
-            }
-            else {
-                if (recitationQuestions.getCorrectAnswer().equals(reciteAnswer)) {
+            System.out.print(recitationQuestions.getQuestionName() );
+            long startTime = System.currentTimeMillis();
+            String writtenAnswer = scan.nextLine();
+            long endTime = System.currentTimeMillis();
+            long elapsedTime = endTime - startTime;
+            if (elapsedTime > timeLimit) {
+            System.out.println("⏰ Time's up! No score for this question.");
+            continue;
+        }
+        if (!writtenAnswer.isEmpty()) {
+            writtenAnswer = writtenAnswer.substring(0, 1).toUpperCase() + writtenAnswer.substring(1);
+        }
+                if (recitationQuestions.getCorrectAnswer().equals(writtenAnswer)) {
+                    System.out.println("Correct Answer");
                     totalRecitationScores+=recitationQuestions.getPointsGiven();
+                    System.out.println("Score now are " + totalRecitationScores);
                 }
-
-            }
+                else {
+                    System.out.println("Incorrect Answer");
+                }
         }
         return totalRecitationScores;
     }
