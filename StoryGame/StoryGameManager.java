@@ -121,8 +121,12 @@ public class StoryGameManager extends GameEngine  {
         new WrittenQuestions("14. Which symbol is used for single-line comments in Java? A) # B) // C) /* */ D) --", "B", 5),
     new WrittenQuestions("15. What will happen if you forget to include a semicolon at the end of a statement in Java? A) The program will still run B) It will throw a syntax error C) The compiler will fix it automatically D) It will ignore the statement", "B", 5)
         }, scan));
-         System.out.println("Your total grade for your Examination are " + student.getExamScore());
+
+        //  System.out.println("Your total grade for your Examination are " + student.getExamScore());
         student.setPrelimGrade();
+                System.out.println("Test score for exam: " + student.getQuizScore());
+System.out.println("Test score for quiz: " + student.getRecitationScore());
+        System.out.println("Test score for recitation: " + student.getExamScore());
        System.out.println("Your total Grade for this prelim are: " + student.getPrelimGrade());
        midterm.narrate(new String[] {
         "The prelim period is now over and now it is midterm now",
@@ -172,6 +176,40 @@ new WrittenQuestions("15. What is the correct syntax to end a switch block? A) e
 System.out.println("Your total grade for your examination are " +  student.getExamScore());
     student.setMidtermGrade();
     System.out.println("Your total grade for this midterm are: " + student.getMidtermGrade());
+    preFinals.narrate(new String[] {
+        
+    });
+   student.setRecitationScore(preFinals.recitation(new RecitationQuestions[] {
+
+    }, scan));
+    System.out.println("Your total score for your recitation are " + student.getRecitationScore());
+   student.setQuizScore(preFinals.quizzes(new WrittenQuestions[] {
+
+    }, scan));
+    System.out.println("Your total score for your quiz are " + student.getQuizScore());
+   student.setExamScore(preFinals.examination(new WrittenQuestions[] {
+
+    }, scan));
+    System.out.println("Your total score for the exam are " + student.getExamScore());
+    finals.narrate(new String[] {
+
+    });
+   student.setRecitationScore(finals.recitation(new RecitationQuestions[] {
+
+    }, scan));
+    System.out.println("Your total score for your recitation are " + student.getRecitationScore());
+    
+   student.setQuizScore(finals.quizzes(new WrittenQuestions[] {
+        
+    }, scan));
+    System.out.println("Your total score for your quiz are " + student.getQuizScore());
+   student.setExamScore(finals.examination(new WrittenQuestions[] {
+        
+    }, scan));
+    
+    finals.narrate(new String[] {
+
+    });
         return 2;
     }
     
