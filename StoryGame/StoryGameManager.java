@@ -176,41 +176,104 @@ new WrittenQuestions("15. What is the correct syntax to end a switch block? A) e
 System.out.println("Your total grade for your examination are " +  student.getExamScore());
     student.setMidtermGrade();
     System.out.println("Your total grade for this midterm are: " + student.getMidtermGrade());
-    preFinals.narrate(new String[] {
-        
-    });
    student.setRecitationScore(preFinals.recitation(new RecitationQuestions[] {
-
+new RecitationQuestions("What keyword is used to repeat a block of code a specific number of times? A - loop\n B - for\n C - repeat", "B", 10, "Correct! The 'for' loop is used to repeat code a set number of times — 10 points!", "Not quite, the correct answer is B — the 'for' keyword starts a loop that repeats code."),
+new RecitationQuestions("In a for loop, what part usually updates the loop variable each cycle? A - condition\n B - increment/decrement\n C - initialization", "B", 10, "Good job! The increment/decrement part updates the loop variable — 10 points!", "Not quite, the correct answer is B — it updates the variable after each iteration."),
+new RecitationQuestions("If you want a loop to run 5 times, starting at 0, what should the condition look like? A - i <= 5\n B - i < 5\n C - i == 5", "B", 10, "Correct! Using 'i < 5' runs the loop 5 times (0 to 4) — nice work!", "Incorrect. The correct answer is B — 'i < 5' makes it run exactly 5 times.")
     }, scan));
     System.out.println("Your total score for your recitation are " + student.getRecitationScore());
    student.setQuizScore(preFinals.quizzes(new WrittenQuestions[] {
-
+new WrittenQuestions("1. Which type of loop is best used when you know exactly how many times you want to repeat a block of code? A) while loop B) for loop C) do-while loop D) switch statement", "B", 5),
+new WrittenQuestions("2. What keyword is used to skip the current iteration of a loop and move to the next one? A) exit B) return C) skip D) continue", "D", 5),
+new WrittenQuestions("3. In a while loop, when is the loop condition checked? A) before the loop body executes B) after the loop body executes C) only once D) randomly", "A", 5),
+new WrittenQuestions("4. Which loop guarantees that the code inside it will run at least once? A) for loop B) while loop C) do-while loop D) infinite loop", "C", 5),
+new WrittenQuestions("5. What will happen if the loop condition never becomes false? A) The program will crash immediately B) The loop will run infinitely C) It will skip the loop D) It will produce an error before running", "B", 5),
     }, scan));
     System.out.println("Your total score for your quiz are " + student.getQuizScore());
    student.setExamScore(preFinals.examination(new WrittenQuestions[] {
-
+new WrittenQuestions("1. What will be the output of the following code? int sum = 0; for(int i = 1; i <= 3; i++) { sum += i; } System.out.println(sum); A) 3 B) 6 C) 5 D) 4", "B", 5),
+new WrittenQuestions("2. How many times will this loop execute? for(int i = 2; i < 10; i += 2) { } A) 4 B) 5 C) 3 D) 8", "B", 5),
+new WrittenQuestions("3. What is the main difference between a while loop and a do-while loop? A) while runs once, do-while repeats infinitely B) do-while checks condition first C) do-while guarantees one execution before condition check D) while is faster", "C", 5),
+new WrittenQuestions("4. In a nested loop, if the outer loop runs 4 times and the inner loop runs 3 times, how many total iterations occur? A) 7 B) 12 C) 10 D) 6", "B", 5),
+new WrittenQuestions("5. What will happen if you forget to update the loop variable inside a while loop? A) Syntax error B) Infinite loop C) Compile-time error D) Skips the loop", "B", 5),
+new WrittenQuestions("6. What keyword is used to exit a loop immediately, even if the condition is still true? A) continue B) break C) exit D) stop", "B", 5),
+new WrittenQuestions("7. What will this code print? int x = 0; while(x < 3) { x++; } System.out.print(x); A) 0 B) 2 C) 3 D) 4", "C", 5),
+new WrittenQuestions("8. Which of the following loop statements is most suitable for reading input until the user enters a specific keyword? A) for loop B) while loop C) do-while loop D) nested for loop", "B", 5),
+new WrittenQuestions("9. What does the 'continue' statement do in a loop? A) Ends the loop completely B) Skips remaining code in current iteration and goes to the next one C) Restarts the loop from the beginning D) Terminates the program", "B", 5),
+new WrittenQuestions("10. What is the output of: for(int i = 1; i <= 5; i++) { if(i == 3) break; System.out.print(i); } A) 12345 B) 12 C) 123 D) 1", "B", 5),
+new WrittenQuestions("11. What will be the last value printed by this loop? for(int i = 1; i <= 10; i += 3) { System.out.print(i + ' '); } A) 7 B) 10 C) 9 D) 8", "A", 5),
+new WrittenQuestions("12. Which of the following loops executes faster in Java? A) while loop B) for loop C) do-while loop D) None, all loops execute with similar speed", "D", 5),
+new WrittenQuestions("13. Which expression correctly represents a for loop that runs exactly 10 times? A) for(int i = 1; i < 10; i++) B) for(int i = 0; i <= 10; i++) C) for(int i = 0; i < 10; i++) D) for(int i = 1; i <= 9; i++)", "C", 5),
+new WrittenQuestions("14. What is the output of this nested loop? for(int i = 1; i <= 2; i++){ for(int j = 1; j <= 3; j++){ System.out.print(j + ' '); } } A) 1 2 3 1 2 3 B) 1 1 1 2 2 2 C) 3 2 1 3 2 1 D) 1 2 3", "A", 5),
+new WrittenQuestions("15. What happens if you place a semicolon directly after a for loop declaration, like for(int i = 0; i < 5; i++); ? A) Syntax error B) The loop body executes normally C) The loop runs but does nothing D) It becomes an infinite loop", "C", 5)
     }, scan));
     System.out.println("Your total score for the exam are " + student.getExamScore());
     finals.narrate(new String[] {
-
+        "The semester is now over all are completed but one",
+        "The finals which teachers gave most heavy tasks with only a limited time of deadline",
+        "Students will feel exhaustion and anxiety due to the pressure and immense workload",
+        "But to the likes of akhito will experience worst due to him being overwhelmed by both work and school works",
+        "Yet his spirit never faltered, instead he hardened his resolve to endure the workload",
+        "Instead of falling to despair he used this as learning how to manage multiple tasks simultaneously.",
+        "During their break while students enjoyed their vacation to rest, Akhito kept learning and working hard for his future",
+        "After two weeks of break and checking of their grades the teacher began their lessons",
+        "After discussing the lessons before giving the major activities to the students they conduct forst a recitation to test if the students learned something from the lesson"
     });
    student.setRecitationScore(finals.recitation(new RecitationQuestions[] {
-
+new RecitationQuestions("What is an array in Java? A - A single variable that stores one value B - A collection of variables of the same type stored under one name C - A random list of values of different types", "B", 10, "Correct! An array stores multiple values of the same type under one name — great job!", "Not quite, the correct answer is B — arrays store multiple values of the same type."),
+new RecitationQuestions("If an array has 5 elements, what is the index of its last element? A - 5 B - 4 C - 6", "B", 10, "Good job! Arrays start from index 0, so the last index is 4 — you earn 10 points!", "Incorrect, the correct answer is B — array indices start at 0, so the last is 4."),
+new RecitationQuestions("Which statement correctly creates an integer array with 10 elements? A - int[] arr = new int[10]; B - int arr(10); C - array int = 10[];", "A", 10, "Correct! 'int[] arr = new int[10];' creates an array with 10 integer slots — nice work!", "Not quite, the correct answer is A — that’s the proper Java syntax for an array."),
     }, scan));
     System.out.println("Your total score for your recitation are " + student.getRecitationScore());
-    
+
    student.setQuizScore(finals.quizzes(new WrittenQuestions[] {
-        
+new WrittenQuestions("1. Which of the following correctly declares an integer array in Java? A) int arr[]; B) int arr; C) array int[]; D) int array();", "A", 5),
+new WrittenQuestions("2. What will be the index of the last element in an array with 8 elements? A) 8 B) 7 C) 9 D) 6", "B", 5),
+new WrittenQuestions("3. What is the main purpose of using classes in Java? A) To make code longer B) To organize and reuse code through objects C) To store random data D) To handle arrays only", "B", 5),
+new WrittenQuestions("4. What is an object in Object-Oriented Programming? A) A variable that stores data only B) An instance of a class C) A type of loop D) A reserved keyword", "B", 5),
+new WrittenQuestions("5. How can you access the third element of an array named 'grades'? A) grades[3] B) grades(3) C) grades[2] D) grades{3}", "C", 5)
     }, scan));
     System.out.println("Your total score for your quiz are " + student.getQuizScore());
    student.setExamScore(finals.examination(new WrittenQuestions[] {
-        
+        new WrittenQuestions("1. What is the main purpose of programming? A) To confuse computers B) To give instructions to a computer to perform tasks C) To store files D) To make text documents", "B", 5),
+new WrittenQuestions("2. Which of the following is a valid Java data type? A) word B) int C) number D) digit", "B", 5),
+new WrittenQuestions("3. What symbol is used to end a statement in Java? A) , (comma) B) . (period) C) ; (semicolon) D) : (colon)", "C", 5),
+new WrittenQuestions("4. What does the term 'variable' mean in programming? A) A name that stores a value that can change B) A fixed number C) A reserved keyword D) A special function", "A", 5),
+new WrittenQuestions("5. Which of the following correctly declares a variable in Java? A) int number = 10; B) int = 10 number; C) 10 = number int; D) number int = 10;", "A", 5),
+new WrittenQuestions("6. What is the output of: System.out.println(5 + 3 * 2); A) 16 B) 11 C) 13 D) 10", "B", 5),
+new WrittenQuestions("7. Which of the following is a conditional statement in Java? A) while B) if C) for D) print", "B", 5),
+new WrittenQuestions("8. What keyword is used to repeat a block of code a specific number of times? A) while B) repeat C) for D) loop", "C", 5),
+new WrittenQuestions("9. What will be the output of: for(int i = 0; i < 3; i++) { System.out.print(i + ' '); } A) 0 1 2 B) 1 2 3 C) 2 3 4 D) 3 2 1", "A", 5),
+new WrittenQuestions("10. Which keyword is used to stop a loop immediately? A) exit B) end C) break D) stop", "C", 5),
+new WrittenQuestions("11. What is an array used for in Java? A) To store multiple values of the same type in a single variable B) To create user interfaces C) To print data D) To define loops", "A", 5),
+new WrittenQuestions("12. How do you find the number of elements in an array named 'nums'? A) nums.size() B) nums.count C) nums.length D) nums.getLength()", "C", 5),
+new WrittenQuestions("13. What does OOP stand for? A) Object Output Program B) Object-Oriented Programming C) Organized Operator Process D) Object-Oriented Procedure", "B", 5),
+new WrittenQuestions("14. What is a class in Java? A) A loop that runs continuously B) A blueprint or template for creating objects C) A function used to print data D) A data type for arrays", "B", 5),
+new WrittenQuestions("15. What is an object in Java? A) A variable that stores data only B) A specific instance created from a class C) A part of the compiler D) A syntax rule", "B", 5)
     }, scan));
-    
+    System.out.println("Your total score for your examination are " + student.getExamScore());
+    student.setFinalsGrade();
+    System.out.println("Your total grade for this midterm are " + student.getFinalsGrade());
     finals.narrate(new String[] {
-
+        "Now that the final grade has been uploaded in their respective accounts many students including Akhito are checking into their account",
+        "Many feel dissapointment many are happy",
+        "But for Akhito, after viewing his grade he felt relived",
+        "He might not attained the highest grade but he did passed all of his courses with no failing grade despite being a working student",
+        "After realizing how hard being a working student in college, he knows how much more he will face in the higher years",
+        "But despite this, day by day he is still strengthening his resolve to face the struggles ahead",
+        "For a dream that are thought to be so far to be reached for the likes of him",
+        "Now it feels like it will become a reality",
+        "A journey of Akhito Matsumoto's innovator journey",
+        "Life can be tough and unfair",
+        "But the sheer will of people like Akhito",
+        "Shows only a proof that flower can still bloom even in a chaos"
     });
-        return 2;
+    student.setTotalGrade();
+    student.setTotalGWA();
+            return student.getUserGamePoints();
     }
+
+
+    
     
 }

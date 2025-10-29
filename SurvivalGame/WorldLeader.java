@@ -42,7 +42,14 @@ public enum WorldLeader {
               "If art school says nein europe shall be mein",
               5000,
               "Axis"
-    );
+    )
+    // CHURCHILL("Winston Churchill",
+    // new Abilities[] {
+    //     new HealAbility("Iron Resolve", "His sheer will to never give up force himself to heal up to 1000hp", false, 12, 1000),
+    //     new BuffAbility("Lion's ", "Churchill's fury against the british's enemies increasing his attack by 75", false, 12, 75, 10),
+    // }
+    // )
+    ;
     // MUSSOLINI("Benito Mussolini", new String[]{"Fascist blast", "Iron Discipline", "Glory of Rome"}, "Father of Fascism", "Italy", "Il Duce commands victory!", 3500, 3300, "Axis"),
     // HITLER("Adolf Hitler", new String[]{"Dictators Shout", "Fuehrer’s Wrath", "Propaganda Surge"}, "Barbarrosa Reichstorm", "Nazi Germany", "Germany will Rise Again", 4000, 3000, "Axis"),
     // HIROHITO("Emperor Hirohito", new String[]{"Kamikaze spirit", "Amaterasu's Blessing", "Empires of the sun"}, "Banzai Charge", "Japan", "The enemy is stronger but heavens will not pardon their sins", 4000, 3000, "Axis"),
