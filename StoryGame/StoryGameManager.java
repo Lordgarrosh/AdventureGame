@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import AdventureGame.GameMechanics.DifficultyMode;
 import AdventureGame.GameMechanics.GameEngine;
-import java.util.Scanner;
 public class StoryGameManager extends GameEngine  {
 //college life simulator
     

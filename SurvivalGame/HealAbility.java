@@ -10,7 +10,7 @@ public class HealAbility extends Abilities{
 
     @Override
     public void activate(PlayerHero playerHero, Enemy enemy) {
-       
+       System.out.println("Player used " + getAbility());
        playerHero.heal(heal);
     }
 

@@ -17,7 +17,7 @@ public abstract class GameEngine implements GameMechanics{
     }
 
     public DifficultyMode getDifficulty() {
-        return difficulty;
+        return difficulty;  
     }
 
     public void setDifficulty(DifficultyMode difficulty) {

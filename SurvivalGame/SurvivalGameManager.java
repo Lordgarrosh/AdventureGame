@@ -60,7 +60,7 @@ try {
     }
 
     @Override
-    public String chooseHeroLeader(Scanner scan, String powerType) {
+    public PlayerHero chooseHeroLeader(Scanner scan, String powerType) {
     boolean isHeroFound = false;
     String chooseLeader = "";
     while (!isHeroFound) {
@@ -72,7 +72,7 @@ System.out.println(listWorldLeader.getName() + " from the country of " + listWor
             }
             
         }
-         System.out.print("Enter your hero leader: ");
+         System.out.print("Enter the last name of your hero leader: ");
         chooseLeader = scan.nextLine();
         for (WorldLeader heroLeader : WorldLeader.values()) {
             if (heroLeader.getPowerType().equals(powerType) && heroLeader.getName().equals(chooseLeader))  {
@@ -85,7 +85,7 @@ System.out.println(listWorldLeader.getName() + " from the country of " + listWor
             System.out.println("Please choose only from the hero given");
         }
         }
-        return chooseLeader;
+        return WorldLeader.valueOf(chooseLeader);
     }
 
     @Override
@@ -99,31 +99,28 @@ System.out.println(listWorldLeader.getName() + " from the country of " + listWor
 
     @Override
     public int computeGameScore() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'computeGameScore'");
+        return 334;
     }
 
-
+q
 
     @Override
-    public synchronized void startBattle(Scanner scan, PlayerHero playerHero, Enemy enemy) {
-        System.out.println("Battle will begin now in");
-        try {
-        for(int i = 3;i >= 1; i--) {
-            System.out.println(i);
-            Thread.sleep(2000);
-        }
-    } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("Let battle be joined");
+    public void startBattle(Scanner scan, PlayerHero playerHero, Enemy enemy) {
+    for (WorldLeader enemyHero : WorldLeader.values()) {
+        
+    }
+    System.out.println("The player hero are " + playerHero.getName());
     }
 
 
 
     @Override
     public int startGame(Scanner scan) {
-        System.out.println("Starting game for this mfker");
+        this.chooseLevel(scan);
+        this.narrate();
+       String power = this.choosePower(scan);
+       PlayerHero hero = this.chooseHeroLeader(scan, power);
+       this.startBattle(scan, hero, null);
         return 2;
     }
 }

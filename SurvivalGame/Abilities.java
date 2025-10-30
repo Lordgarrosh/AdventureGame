@@ -6,14 +6,24 @@ public abstract class Abilities implements AbilityEffect {
     private String description;
     private boolean isUltimate;
     private double cooldown;
+    private long lastUsedTime;
 
     Abilities(String ability, String description,  boolean isUltimate, double cooldown) {
         this.ability = ability;
         this.description = description;
         this.isUltimate = isUltimate;
         this.cooldown = cooldown;
+        this.lastUsedTime = 0;
     }
 
+
+    public boolean isInCooldown() {
+        return (System.currentTimeMillis() - lastUsedTime) < cooldown * 1000;
+    }
+
+    public void skillActivated() {
+
+    }
     //getters
     public String getAbility() {
         return ability;
@@ -29,6 +39,10 @@ public abstract class Abilities implements AbilityEffect {
         return cooldown;
     }
 
+    public double getRemainingCooldown() {
+ 
+        return Math.max(0, remaining);
+    }
     @Override
     public String toString() {
         return "Player Uses " + getAbility();
